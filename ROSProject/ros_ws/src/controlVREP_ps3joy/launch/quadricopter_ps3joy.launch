@@ -1,0 +1,16 @@
+<!--%Tag(FULL)%-->
+<launch>
+
+    <!-- PS3 joy node -->
+    <node output="screen" pkg="joy"
+          type="joy_node" name="ps3_joy" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+    </node>
+
+    <node pkg="controlVREP_ps3joy" type="controlPS3" name="controlPS3" output="screen">
+        <remap from="/cmd_vel" to="/cmd_vel_in/controlPS3"/>
+    </node>
+
+</launch>
+<!--%EndTag(FULL)%-->

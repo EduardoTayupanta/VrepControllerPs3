@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="" default="default" basedir=".">
+
+    <property file="ros_ws/nbproject/ros.project.properties"/>
+
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <!--<mkdir dir="${build.dir}"/>-->
+    </target>
+
+    <target name="compile" depends="init" description="Convert PSML files to Java source code.">
+        <echo>Running ${make} -f Makefile from ${ros.ws}...</echo>
+        <exec executable="${make}" dir="${ros.ws}">
+            <arg value="-f"/>
+            <arg value="Makefile"/>
+        </exec>
+    </target>
+    
+    <target name="compile-single" depends="init" description="Compile a single package.">
+        <echo>Running "${make} -f Makefile build-single ROS_PACKAGE_NAME=${nbrospack.tmp.ros.package.name}" from "${ros.ws}"...</echo>
+        <exec executable="${make}" dir="${ros.ws}">
+            <arg value="-f"/>
+            <arg value="Makefile"/>
+            <arg value="build-single"/>
+            <arg value="ROS_PACKAGE_NAME=${nbrospack.tmp.ros.package.name}"/>
+        </exec>
+    </target>
+
+    <target name="run" description="run application" >
+        <echo>Running application currently not supported.</echo>
+    </target>
+
+    <target name="run-single" depends="init,compile-single" description="run single class" >
+        <echo>Running source file ${javac.includes} currently not supported.</echo>
+    </target>
+
+    <target name="clean" description="clean up" >
+        <echo>Running "${make} -f Makefile clean" in directory "${ros.ws}"...</echo>
+        <exec executable="${make}" dir="${ros.ws}">
+            <arg value="-f"/>
+            <arg value="Makefile"/>
+            <arg value="clean"/>
+        </exec>
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <!--<delete dir="${build.dir}"/>-->
+        <!--<delete dir="${dist.dir}"/>-->
+    </target>
+
+    <target name="clean-single" description="Clean up a single package" >
+        <echo>Running "${make} -f Makefile clean-single ROS_PACKAGE_NAME=${nbrospack.tmp.ros.package.name}" in directory "${ros.ws}"...</echo>
+        <exec executable="${make}" dir="${ros.ws}">
+            <arg value="-f"/>
+            <arg value="Makefile"/>
+            <arg value="clean-single"/>
+            <arg value="ROS_PACKAGE_NAME=${nbrospack.tmp.ros.package.name}"/>
+        </exec>
+    </target>
+
+</project>
