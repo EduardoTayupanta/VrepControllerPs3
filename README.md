@@ -21,7 +21,7 @@ $ sudo bash
 $ rosrun ps3joy ps3joy_node.py
 ```
 
-Precionar el boton de emparejamiento del control Ps3
+Precionar el boton de emparejamiento del control Ps3,
 debe vibrar la palanca y debe aparecer esto<br />
 
 ```
