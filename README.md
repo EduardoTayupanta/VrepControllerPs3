@@ -4,14 +4,14 @@ Instalar el Paquete ps3joy<br />
 http://wiki.ros.org/ps3joy<br />
 
 En una nueva terminal emparejar el control Ps3<br />
-$ sudo bash<br />
-$ rosrun ps3joy sixpair<br />
+`$ sudo bash`<br />
+`$ rosrun ps3joy sixpair`<br />
 Precionar Ctrl-D para salir<br />
 
 En una nueva terminal iniciar roscore<br />
 $ roscore<br />
 
-En una nueva terminal iniciar roscore<br />
+En una nueva terminal<br />
 $ sudo bash<br />
 $ rosrun ps3joy ps3joy_node.py<br />
 
@@ -25,7 +25,7 @@ Dar permisos al joystick<br />
 
 $ ls -l /dev/input/js0<br />
 
-Debes ver algo a esto<br />
+Se muestra algo a esto<br />
 
 crw-rw---- 1 root input 13, 0 mar  1 12:30 /dev/input/js0<br />
 
