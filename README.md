@@ -16,6 +16,7 @@ $ roscore
 ```
 
 En una nueva terminal<br />
+Desenchufa el joystick de la computadora y asegúrate de que el dongle USB bluetooth esté enchufado. Ahora, inicia el programa para crear la conexión entre el dongle bluetooth y el joystick:<br />
 ```
 $ sudo bash
 $ rosrun ps3joy ps3joy_node.py
